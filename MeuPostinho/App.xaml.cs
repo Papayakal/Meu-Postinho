@@ -8,7 +8,7 @@ namespace MeuPostinho
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Views.CadastroPage());
+            MainPage = new NavigationPage(new Views.Agendamento());
         }
 
        
