@@ -1,21 +1,22 @@
-namespace MeuPostinho.Views;
-
-public partial class CadastroPage : ContentPage
+namespace MeuPostinho.Views
 {
-	public CadastroPage()
-	{
-		InitializeComponent();
-	}
-
-    private bool senhaVisivel = false;
-
-    private void Button_Clicked(object sender, EventArgs e)
+    public partial class CadastroPage : ContentPage
     {
-        senhaVisivel = !senhaVisivel;
+        public CadastroPage()
+        {
+            InitializeComponent();
+        }
 
-      senhaEntry.IsPassword = !senhaVisivel;
+        private bool senhaVisivel = false;
 
-        // opcional: mudar o ícone/texto
-        ((Button)sender).Text = senhaVisivel ? "🙈" : "👁";
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            senhaVisivel = !senhaVisivel;
+
+            senhaEntry.IsPassword = !senhaVisivel;
+
+            // opcional: mudar o ícone/texto
+            ((Button)sender).Text = senhaVisivel ? "🙈" : "👁";
+        }
     }
 }

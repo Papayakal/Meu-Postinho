@@ -12,37 +12,36 @@
 
                 <VerticalStackLayout Spacing="15">
 
-                    <!-- Título -->
+                <!-- Título -->
                     <Label TextColor="DimGrey" Text="Agendamento" FontSize="24" HorizontalOptions="Center"/>
+                    
 
-
-
-                    <!-- Data -->
+                <!-- Data -->
                     <VerticalStackLayout Spacing="1">
                         <Label Text="Data" TextColor="Grey"/>
                         <DatePicker x:Name="dataConsulta" TextColor="Grey"/>
                     </VerticalStackLayout>
 
-                    <!-- Hora -->
+                <!-- Hora -->
                     <VerticalStackLayout Spacing="1">
                         <Label Text="Hora" TextColor="Grey"/>
                         <TimePicker x:Name="horaConsulta" TextColor="Grey"/>
                     </VerticalStackLayout>
 
 
-                    <!-- Médico -->
+                <!-- Médico -->
                     <Entry TextColor="Black" x:Name="txtMedico" Placeholder="Nome do médico"/>
 
-                    <!-- UBS -->
+                <!-- UBS -->
                     <Entry TextColor="Black" x:Name="txtUBS" Placeholder="Nome da UBS"/>
 
-                    <!-- Botão -->
+                <!-- Botão -->
                     <Button BackgroundColor="DarkSeaGreen" Text="Agendar" HeightRequest="45"/>
 
 
                 </VerticalStackLayout>
 
-            </Frame>
+             </Frame>
 
         </Grid>
 </ContentPage>

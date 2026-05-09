@@ -1,9 +1,8 @@
-
 namespace MeuPostinho.Views
 {
-    public partial class Agendamento : ContentPage
+    public partial class Medicamentos : ContentPage
     {
-        public Agendamento()
+        public Medicamentos()
         {
             InitializeComponent();
         }

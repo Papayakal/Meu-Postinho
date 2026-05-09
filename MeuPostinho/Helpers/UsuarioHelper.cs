@@ -1,0 +1,47 @@
+﻿using MeuPostinho.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using SQLite;
+
+namespace MeuPostinho.Helpers
+{
+    public class UsuarioHelper
+    {
+        readonly SqliteAsyncConnection _conn;
+
+        public UsuarioHelper(string path)
+        {
+            _conn = new SqliteAsyncConnection(path);
+            _conn.CreateTableAsync<Usuario>().Wait();
+        }
+
+        public Task<int> Insert(Usuario u)
+        {
+            return _conn.InsertAsync(u);
+        }
+
+        public Task<int> Update(Usuario u)
+        {
+            return _conn.UpdateAsync(u);
+        }
+
+        public Task<int> Delete(int id)
+        {
+            return _conn.Table<Usuario>().DeleteAsync(i => i.IdUsuario == id);
+        }
+
+        public Task<List<Usuario>> GetAll()
+        {
+            return _conn.Table<Usuario>().ToListAsync();
+        }
+
+        public Task<List<Usuario>> Login(string email, string senha)
+        {
+            string sql = "SELECT * FROM Usuario WHERE Email=? AND Senha=?";
+            return _conn.QueryAsync<Usuario>(sql, email, senha);
+        }
+    }
+}
